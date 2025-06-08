@@ -19,9 +19,10 @@ A Django-based REST API for managing events and attendees, with PostgreSQL, time
 
 ## Setup Instructions
 1. **Clone the Project**:
-   - Navigate to the directory: `cd event_management_system`
-
-
+   ```bash
+      git clone https://github.com/Gangadhar454/event_management_system.git   
+      cd event_management_system
+   ```
 2. **Build and Run with Docker**:
    - Run: `docker-compose up --build`
    - The `event_manager` container uses `wait-for.sh` to wait until the PostgreSQL `db` container is live (checked via `pg_isready`) before running migrations and starting Gunicorn.
