@@ -24,7 +24,7 @@ A Django-based REST API for managing events and attendees, with PostgreSQL, time
       cd event_management_system
    ```
 2. **Build and Run with Docker**:
-   - Run: `docker-compose up --build`
+   - Run: `docker compose up --build`
    - The `event_manager` container uses `wait-for.sh` to wait until the PostgreSQL `db` container is live (checked via `pg_isready`) before running migrations and starting Gunicorn.
    - Access the API at `http://localhost:8000` and Swagger at `http://localhost:8000/swagger/`.
 
