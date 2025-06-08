@@ -8,7 +8,6 @@ class RegisterAttendeeView(generics.GenericAPIView):
     serializer_class = AttendeeSerializer
 
     def post(self, request, event_id, *args, **kwargs):
-        """Register an attendee for an event."""
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             try:
@@ -23,7 +22,6 @@ class EventAttendeesView(generics.GenericAPIView):
     pagination_class = PageNumberPagination
 
     def get(self, request, event_id, *args, **kwargs):
-        """List all attendees for an event with pagination."""
         attendees = EventService.get_event_attendees(event_id, request.query_params.get('page'), self.pagination_class.page_size)
         page = self.paginate_queryset(attendees)
         if page is not None:

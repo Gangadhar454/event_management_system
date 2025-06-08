@@ -40,4 +40,4 @@ class AttendeeAPITestCase(TestCase):
         self.client.post(reverse('register-attendee', kwargs={'event_id': str(self.event.id)}), self.attendee_data, format='json')
         response = self.client.get(reverse('event-attendees', kwargs={'event_id': str(self.event.id)}))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.data['results']), 1)
+        self.assertEqual(len(response.data), 1)
